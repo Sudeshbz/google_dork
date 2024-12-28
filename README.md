@@ -1,79 +1,83 @@
-Google Dork Search with Data Structures
-Bu proje, kullanıcıların belirli dosya türlerine sahip içerikleri Google'da aramalarını sağlayan bir web uygulamasıdır. Projede, kullanıcının girdiği konu ve dosya türüne göre Google Dork sorgusu oluşturulur ve ilgili dosyaların araması yapılır. Ayrıca, projede temel veri yapıları (LinkedList, Stack, Queue, Graph) kullanılarak arama işlemleri simüle edilmiştir.
+Google Dork Dosya Arama Web Uygulaması
+
+Genel Bakış
+
+Bu proje, Python ve Django kullanılarak geliştirilen bir web uygulamasıdır. Kullanıcılar, belirli bir konu ve dosya türü seçerek Google Dork tarzında arama sorguları oluşturabilir ve özel veri yapıları kullanarak veri işlemlerini simüle edebilir.
 
 Özellikler
-Kullanıcı, belirli bir konu ve dosya türü seçerek Google Dork sorgusu oluşturabilir.
-Oluşturulan sorgular, LinkedList, Stack, Queue, ve Graph gibi temel veri yapıları kullanılarak işlenir.
-Google Dork sorgusu sonucu, dosya türlerine göre ilgili içerikler aranır.
-Web uygulaması, Python Django framework'ü ile geliştirilmiştir.
-Kullanıcı arama sorgusunun sonuçlarını ekranda görebilir.
-Teknolojiler
-Python 3.x
-Django 5.x
-HTML / CSS
-JavaScript (isteğe bağlı)
+
+Belirtilen dosya türlerinde (ör. PDF, Word, PNG, HTML) Google Dork tarzı aramalar yapma.
+
+Aşağıdaki veri yapılarıyla simüle edilmiş veri işlemleri:
+
+Bağlı Liste (Linked List)
+
+Yığın (Stack)
+
+Kuyruk (Queue)
+
+Grafik (Graph)
+
+Etkileşimli ve duyarlı bir kullanıcı arayüzü.
+
+Gereksinimler
+
+Aşağıdaki yazılımların kurulu olduğundan emin olun:
+
+Python 3.9 veya üstü
+
+Django 5.1.3
+
 Kurulum
-1. Python ve Django Yükleyin
-Proje Python 3 ve Django 5.x sürümü ile çalışmaktadır. İlk olarak Python ve Django'nun bilgisayarınızda yüklü olduğundan emin olun. Eğer yüklü değilse, aşağıdaki komutları kullanarak yükleyebilirsiniz:
 
-bash
-Kodu kopyala
-# Python 3'ü yükleyin
-https://www.python.org/downloads/
+Projeyi klonlayın ve proje dizinine gidin:
 
-# Django'yu yükleyin
-pip install django
-2. Proje Dosyalarını İndirin
-Proje dosyalarını bilgisayarınıza indirerek ilgili dizine geçin.
-
-bash
-Kodu kopyala
 git clone https://github.com/username/google_dork.git
 cd google_dork
-3. Gerekli Bağımlılıkları Yükleyin
-Proje dizininde aşağıdaki komutları kullanarak gerekli bağımlılıkları yükleyin:
 
-bash
-Kodu kopyala
+Gerekli Python paketlerini yükleyin:
+
 pip install -r requirements.txt
-4. Veritabanı Migrasyonlarını Çalıştırın
-Veritabanı yapısını oluşturmak için aşağıdaki komutları çalıştırın:
 
-bash
-Kodu kopyala
+Veritabanı migrasyonlarını uygulayın:
+
 python manage.py migrate
-5. Statik Dosyaları Toplayın
-CSS ve diğer statik dosyaları toplamak için aşağıdaki komutu çalıştırın:
 
-bash
-Kodu kopyala
+Statik dosyaları toplayın:
+
 python manage.py collectstatic
-6. Sunucuyu Başlatın
-Geliştirme sunucusunu başlatmak için şu komutu çalıştırın:
 
-bash
-Kodu kopyala
+Geliştirme sunucusunu başlatın:
+
 python manage.py runserver
-Tarayıcınızda http://127.0.0.1:8000/ adresine giderek uygulamayı kullanabilirsiniz.
+
+Tarayıcınızı açın ve şu adrese gidin:
+http://127.0.0.1:8000/
 
 Kullanım
-Web uygulamasına giriş yapın.
-Topic (Konu) kısmına aramak istediğiniz terimi yazın.
-File Type (Dosya Türü) kısmından aramak istediğiniz dosya türünü seçin (HTML, PDF, Word, PNG vb.).
-"Search" butonuna tıklayarak aramayı başlatın.
-Google Dork sorgusu sonucu oluşturulacak ve ilgili dosyalar listelenecektir.
-Veri Yapıları
-Projede şu veri yapıları kullanılmaktadır:
 
-1. LinkedList (Bağlantılı Liste)
-Kullanıcı tarafından yapılan arama sorguları, bağlantılı liste içinde saklanır.
-Listeye her yeni sorgu eklenir.
-2. Stack (Yığın)
-Yığın, en son eklenen sorgunun ilk önce çıkarılacağı şekilde çalışır.
-Yığının push ve pop fonksiyonları ile veriler eklenip çıkarılabilir.
-3. Queue (Kuyruk)
-Kuyruk veri yapısı, ilk giren ilk çıkar (FIFO) prensibine dayanır.
-Kullanıcı sorguları kuyruğa eklenir ve sırayla işlenir.
-4. Graph (Graf)
-Graf, konular ve dosya türleri arasındaki ilişkileri göstermek için kullanılır.
-Her konu, ona bağlı olan dosya türlerini göstermek için graf yapısına eklenir.
+Ana sayfada bir konu girin ve açılır menüden bir dosya türü seçin.
+
+"Ara" düğmesine tıklayarak sorguyu oluşturun ve çalıştırın.
+
+Oluşturulan sorgu görüntülenecek ve yeni bir tarayıcı sekmesinde açılacaktır.
+
+Kullanılan Veri Yapıları
+
+Bağlı Liste (Linked List): Arama sonuçlarını yönetir.
+
+Yığın (Stack): LIFO düzeninde arama sorgularını depolar.
+
+Kuyruk (Queue): FIFO düzeninde arama sorgularını yönetir.
+
+Grafik (Graph): Konular ve dosya türleri arasındaki ilişkileri temsil eder.
+
+Dosya Yapısı
+
+data_structures.py: Bağlı liste, yığın, kuyruk ve grafik implementasyonlarını içerir.
+
+views.py: Kullanıcı girdilerini işleme ve sorgu oluşturma mantığını yönetir.
+
+templates/: Web arayüzü için HTML şablonlarını içerir.
+
+static/: Stil dosyaları ve diğer statik dosyaları içerir.
