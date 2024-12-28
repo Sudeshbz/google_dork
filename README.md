@@ -28,16 +28,20 @@ Proje, Python 3 ve Django 5.x sürümünde çalışmaktadır. Gerekli yazılıml
   pip install django
 
 ### 2. Proje Dosyalarını İndirin
+```bash
 -git clone https://github.com/username/google_dork.git  
 -cd google_dork
 
 ### 3. Gerekli Bağımlılıkları Yükleyin
+```bash
 pip install -r requirements.txt  
 
 ### 4. Veritabanı Migrasyonlarını Çalıştırın
+```bash
 -python manage.py migrate  
 
 ### 6. Sunucuyu Başlatın
+```bash
 -python manage.py runserver  
 
 ### Tarayıcınızda http://127.0.0.1:8000/ adresine giderek uygulamayı başlatabilirsiniz.
